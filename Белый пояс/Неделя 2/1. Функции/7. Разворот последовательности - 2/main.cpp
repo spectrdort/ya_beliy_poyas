@@ -1,15 +1,9 @@
-﻿#include <iostream>
-#include <vector>
+﻿#include <vector>
 
-std::vector<int> Reverse(std::vector<int> rev)
+std::vector<int> vector(std::vector<int> sam)
 {
-	int h = rev.size();
-	int g = (h - 1) * 2; // сколько всего будет ячеек после добавления //
-	for (int i = 1; i <= g; i++)
-	{
-		rev.insert(rev.begin(), rev[i]);
-		i++;
-	}
-	rev.erase(rev.begin() + h, rev.end());
+	std::vector<int> rev;
+	for (int i = sam.size() - 1; i > -1; i--)
+		rev.push_back(sam[i]);
 	return rev;
 }
