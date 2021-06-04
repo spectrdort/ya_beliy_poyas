@@ -1,4 +1,4 @@
-﻿void UpdateIfGreater(char first, char& second)
+﻿void UpdateIfGreater(int first, int& second)
 {
 	if (first > second)
 		second = first;
