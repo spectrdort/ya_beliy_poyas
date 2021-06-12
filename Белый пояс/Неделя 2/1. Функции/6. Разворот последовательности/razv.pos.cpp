@@ -1,14 +1,11 @@
 ﻿#include <iostream>
 #include <vector>
+#include <algorithm>
 
-void Reverse(std::vector<int> rev)
+void Reverse(std::vector<int>& rev)
 {
-	int h = rev.size();
-	int g = (h - 1) * 2; // сколько всего будет ячеек после добавления //
-	for (int i = 1; i <= g; i++)
+	for (int i = 0; i < rev.size() / 2; i++)
 	{
-		rev.insert(rev.begin(), rev[i]);
-		i++;
+		std::swap(rev[i], rev[rev.size() - 1 - i]);
 	}
-	rev.erase(rev.begin() + h, rev.end());
 }
