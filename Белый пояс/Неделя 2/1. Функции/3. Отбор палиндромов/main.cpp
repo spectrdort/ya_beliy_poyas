@@ -4,22 +4,21 @@
 
 std::vector<std::string> PalindromFilter(std::vector<std::string> words, int k)
 {
-	std::string w;
 	std::vector<std::string> res;
-		for (int i = 0; i < words.size(); ++i)
+	for (auto word : words)
+	{
+		bool equal = true;
+		for (int j = 0; j < word.size() / 2; j++)
 		{
-			if (words[i].size() >= k)
+			if (word[j] != word[word.size() - 1 - j])
 			{
-				w = words[i];
-				std::reverse(w.begin(), w.end());
-				{
-					if (w == words[i])
-					{
-						res.push_back(words[i]);
-					}
-				}
+				equal = false;
+				break;
 			}
 		}
+		if (equal)
+			res.push_back(word);
+	}
 	return res;
 }
 
